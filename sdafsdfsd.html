@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Взаимозависимые Input</title>
+		<script>
+			function updateText() {
+				const rangeValue = document.getElementById('range').value
+				document.getElementById('text').value = `Значение: ${rangeValue}`
+			}
+
+			function updateRange() {
+				const textValue = document.getElementById('text').value
+				const numberValue = textValue.match(/\d+/)
+				if (numberValue) {
+					const rangeInput = document.getElementById('range')
+					rangeInput.value = numberValue[0]
+					updateText() // обновляем текстовое поле
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h2>Взаимозависимые поля ввода</h2>
+		<label for="range">Выберите значение:</label>
+		<input type="range" id="range" min="0" max="100" oninput="updateText()" />
+		<br />
+		<label for="text">Текстовое поле:</label>
+		<input type="text" id="text" readonly oninput="updateRange()" />
+	</body>
+</html>

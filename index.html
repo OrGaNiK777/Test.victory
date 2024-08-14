@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Автосалон</title>
+		<link rel="stylesheet" href="./index.css" />
+	</head>
+	<body>
+		<div class="page">
+			<header class="header">
+				<div class="header__contact">
+					<p class="header__contact-address">Новосибирск, ул. Дунаевского, 25/1</p>
+					<p class="header__contact-timeWork">Ежедневно с 9:00 до 20:00</p>
+				</div>
+
+				<div class="header__main">
+					<a><img class="header__main-logo" src="./images/Logo.svg" alt="Лого header" /></a>
+					<menu class="header__links">
+						<a class="header__link">Главная</a>
+						<a class="header__link">Каталог</a>
+						<a class="header__link">Автокредит</a>
+						<a class="header__link">Traid-in</a>
+						<a class="header__link">Выкуп</a>
+						<a class="header__link">Акции</a>
+						<a class="header__link">Контакты</a>
+					</menu>
+					<form>
+						<input class="" placeholder="Поиск по марке" />
+						<button>Связаться</button>
+					</form>
+				</div>
+			</header>
+			<main>
+				<section class="way">Главная > Каталог > Haval > Jolion</section>
+				<section class="specifications">
+					<div class="specifications__header">
+						<h1 class="specifications__header-title">Haval Jolion</h1>
+						<h2 class="specifications__header-location">В Новосибирске</h2>
+						<p class="specifications__header-availability">4 автомобиля в наличии</p>
+					</div>
+					<div class="specifications__main">
+						<div class="specifications__main-image">
+							<span class="discount">-30%</span>
+							<img src="./images/black.jpg" alt="car color" />
+							<div class="color">
+								<p>Цвет</p>
+								<p>Благородный агат</p>
+							</div>
+						</div>
+						<div class="specifications__main-buttonColors">
+							<button class="specifications__main-buttonColor">1</button>
+							<button class="specifications__main-buttonColor">2</button>
+							<button class="specifications__main-buttonColor">3</button>
+							<button class="specifications__main-buttonColor">4</button>
+							<button class="specifications__main-buttonColor">5</button>
+						</div>
+						<div class="specifications__main-info">
+							<div class="parameters">
+								<div class="parameter">
+									<img src="./images/lightning-01.svg" />
+									<p class="parameter__title">Мощность</p>
+									<p class="parameter__text">249 Л.С.</p>
+								</div>
+								<div class="parameter">
+									<img src="./images/speedometer-03.svg" />
+									<p class="parameter__title">Объем двигателя</p>
+									<p class="parameter__text">2,0 Л</p>
+								</div>
+								<div class="parameter">
+									<img src="./images/droplets-02.svg" />
+									<p class="parameter__title">Расход</p>
+									<p class="parameter__text">2,0 Л</p>
+								</div>
+								<div class="parameter">
+									<img src="./images/Drive unit.svg" />
+									<p class="parameter__title">Привод</p>
+									<p class="parameter__text">Полный</p>
+								</div>
+							</div>
+							<div class="benefit">
+								<ul>
+									<li class="benefit__point">
+										<div class="checkbox">
+											<input type="checkbox" />
+											<span class="slider round"></span>
+										</div>
+										<p class="benefit__title">Скидка по Traid-in</p>
+										<p id="traidIn" class="benefit__sum">- 170 000 ₽</p>
+									</li>
+									<li class="benefit__point">
+										<div class="checkbox">
+											<input type="checkbox" />
+											<span class="slider round"></span>
+										</div>
+										<p class="benefit__title">Покупка в кредит</p>
+										<p id="bonus" class="benefit__sum">- 250 000 ₽</p>
+									</li>
+									<li class="benefit__point">
+										<div class="checkbox">
+											<input type="checkbox" />
+											<span class="slider round"></span>
+										</div>
+										<p class="benefit__title">Скидка по программе утилизации</p>
+										<p id="util" class="benefit__sum">- 80 000 ₽</p>
+									</li>
+									<li class="benefit__point">
+										<p class="benefit__title">Ваша выгода</p>
+										<p id="AllBenefit" class="benefit__sum">330 000 ₽</p>
+									</li>
+								</ul>
+							</div>
+							<div class="final">
+								<div class="final__price">
+									от
+									<p id="finalPrice">7 070 000 ₽</p>
+									<p class="final__price-credit">В кредит от 89 000 ₽/мес</p>
+								</div>
+								<p class="benefit__sum">Цена без учета скидки: от 7 400 000 ₽</p>
+								<div class="final__buttons">
+									<button class="final__button final__button_booking">Забронировать</button>
+									<button class="final__button final__button_buy">Купить в кредит</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="calc">
+					<h2 class="calc__title">Рассчитайте условия по кредиту на Haval Jolion</h2>
+					<div class="calc__main">
+						<div class="calc__credit">
+							<h2 class="calc__credit-title">Сумма кредита</h2>
+							<p id="finalPriceCalc" class="calc__credit-sumCred">7 070 000 ₽</p>
+							<div class="inputRange">
+								<p class="inputRange__title">Первоначальный взнос</p>
+								<p id="firstInstallmentText" class="inputRange__value"></p>
+								<input id="firstInstallmentRange" type="range" oninput="updateTextFirstInst()" min="0" max="90" step="0.1" value="45" />
+								<div class="inputRange__range">
+									<p>0%</p>
+									<p>90%</p>
+								</div>
+							</div>
+							<div class="inputRange">
+								<p class="inputRange__title">Срок кредита</p>
+								<p id="termText" class="inputRange__value">6 мес.</p>
+								<input id="termRange" type="range" oninput="updateTextTerm()" min="6" max="96" step="6" value="6" />
+								<div class="inputRange__range">
+									<p>6 мес.</p>
+									<p>8 лет</p>
+								</div>
+							</div>
+						</div>
+						<div class="calc__offer">
+							<h2 class="calc__offer-title">Наше предложение</h2>
+							<div class="payment">
+								<h3 class="payment_title">Ежемесячный платеж</h3>
+								<div class="payment__sum">
+									<button class="payment__button">-</button>
+									<p class="payment__calc">30 000 Р</p>
+									<button class="payment__button">+</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="comparison"></section>
+			</main>
+		</div>
+	</body>
+	<script>
+		function clear(num) {
+			return Number(num ? num.replace(/\D/g, '') : 0)
+		}
+		function updateTextPayment() {
+			const price = clear(document.getElementById('finalPriceCalc').textContent)
+			const firstInstallmentText = clear(document.getElementById('firstInstallmentText').textContent)
+			const termText = clear(document.getElementById('termRange').value)
+			const paymentCalc = document.querySelector('.payment__calc')
+			paymentCalc.textContent =
+				Math.round((price - firstInstallmentText) / termText)
+					.toString()
+					.replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₽'
+		}
+
+		function updateTextTerm() {
+			const rangeValue = document.getElementById('termRange').value
+			const textValue = document.getElementById('termText')
+			textValue.textContent = rangeValue < 12 ? rangeValue + ' мес.' : rangeValue < 18 ? rangeValue / 12 + ' год' : rangeValue < 60 ? rangeValue / 12 + ' года' : rangeValue / 12 + ' лет'
+			updateTextPayment()
+		}
+
+		function updateTextFirstInst() {
+			const price = document.getElementById('finalPriceCalc').textContent
+			const rangeValue = document.getElementById('firstInstallmentRange').value
+			const textValue = document.getElementById('firstInstallmentText')
+			textValue.textContent =
+				Math.round((clear(price) * rangeValue) / 100)
+					.toString()
+					.replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₽'
+			updateTextPayment()
+		}
+		updateTextFirstInst()
+	</script>
+</html>
