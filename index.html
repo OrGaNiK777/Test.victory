@@ -134,7 +134,7 @@
 							<div class="inputRange">
 								<p class="inputRange__title">Первоначальный взнос</p>
 								<p id="firstInstallmentText" class="inputRange__value"></p>
-								<input id="firstInstallmentRange" type="range" oninput="updateTextFirstInst()" min="0" max="90" step="0.1" value="45" />
+								<input id="firstInstallmentRange" type="range" oninput="updateTextFirstInst()" min="0" max="90" step="0.1" value="56,57708628005658" />
 								<div class="inputRange__range">
 									<p>0%</p>
 									<p>90%</p>
@@ -155,22 +155,65 @@
 							<div class="payment">
 								<h3 class="payment_title">Ежемесячный платеж</h3>
 								<div class="payment__sum">
-									<button id='paymentButtonMinus' class="payment__button">-</button>
+									<button onclick="decrement()" class="payment__button">-</button>
 									<p class="payment__calc">30 000 Р</p>
-									<button id='paymentButtonPlus' class="payment__button">+</button>
+									<button onclick="increment()" class="payment__button">+</button>
 								</div>
+								<div class="payment__disclaimer">
+									<img class="payment__disclaimer-img" src="./images/Icon.svg" alt="!" />
+									<p class="payment__disclaimer-text">Расчет носит инфомационный характер, не является публичной офертой</p>
+								</div>
+								<button class="payment__button">Купить в кредит</button>
 							</div>
 						</div>
 					</div>
 				</section>
-				<section class="comparison"></section>
+				<section class="comparison">
+					<h2 class="comparison__title">Сравнение комплектаций Haval Jolion <span class="comparison___quantity">(12)</span></h2>
+					<div class="comparison__buttons">
+						<button class="button" id="prevBtn">←</button>
+						<button class="button" id="nextBtn">→</button>
+					</div>
+					<div class="comparison__container" style="display: flex"></div>
+					<div style='position: relative;'>
+						<h3 class="options__title">Безопасность</h3>
+						<h4 class="options__subtitle">Крепления для детского кресла ISOFIX</h4>
+						<h4 class="options__subtitle">Крепления для детского кресла ISOFIX</h4>
+						<h4 class="options__subtitle">Система предупреждения бокового столкновения при выезде с парковки задним ходом (RCCW)</h4>
+						<h4 class="options__subtitle">Крепления для детского кресла ISOFIX</h4>
+						<h4 class="options__subtitle">Запасное колесо временного использования</h4>
+						<h4 class="options__subtitle">Иммобилайзер</h4>
+						<h4 class="options__subtitle">Крепления для детского кресла ISOFIX</h4>
+					</div>
+				</section>
 			</main>
+			<template id="cardTemplate">
+				<div class="card">
+					<div class="card__container">
+						<h2 class="card__title"></h2>
+						<p class="card__price"></p>
+						<button class="card__btnClose">X</button>
+						<button class="card__btnSub">Отправить заявку</button>
+					</div>
+					<div class="options" style="display: flex; flex-direction: column; width: 50px">
+						<img class="option option1" src="" alt="" />
+						<img class="option option2" src="" alt="" />
+						<img class="option option3" src="" alt="" />
+						<img class="option option4" src="" alt="" />
+						<img class="option option5" src="" alt="" />
+						<img class="option option6" src="" alt="" />
+						<img class="option option7" src="" alt="" />
+					</div>
+				</div>
+			</template>
 		</div>
 	</body>
+	<script src="./index.js" type="module"></script>
 	<script>
 		function clear(num) {
 			return Number(num ? num.replace(/\D/g, '') : 0)
 		}
+
 		function updateTextPayment() {
 			const price = clear(document.getElementById('finalPriceCalc').textContent)
 			const firstInstallmentText = clear(document.getElementById('firstInstallmentText').textContent)
@@ -200,5 +243,21 @@
 			updateTextPayment()
 		}
 		updateTextFirstInst()
+
+		function increment() {
+			const rangeInput = document.getElementById('termRange')
+			if (parseInt(rangeInput.value) < 96) {
+				rangeInput.value = parseInt(rangeInput.value) + 6
+				updateTextTerm()
+			}
+		}
+
+		function decrement() {
+			const rangeInput = document.getElementById('termRange')
+			if (parseInt(rangeInput.value) > 6) {
+				rangeInput.value = parseInt(rangeInput.value) - 6
+				updateTextTerm()
+			}
+		}
 	</script>
 </html>
