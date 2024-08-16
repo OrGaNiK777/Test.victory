@@ -1,0 +1,43 @@
+.header {
+	width: 1332px;
+}
+
+.header__contact {
+	display: flex;
+	height: 32px;
+	background: #151515;
+	justify-content: center;
+	align-items: center;
+}
+
+.header__contact-text {
+	font-family: PT Root UI;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+	color: #dce1e9;
+	opacity: 0.5;
+}
+
+.header__contact-icon {
+	width: 16px;
+	height: 16px;
+}
+
+.header__main {
+}
+
+.header__main-logo {
+}
+
+.header__links {
+}
+
+.header__link {
+}
+
+.header__search {
+}
+
+.header__btnContact {
+}

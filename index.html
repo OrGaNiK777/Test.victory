@@ -10,10 +10,11 @@
 		<div class="page">
 			<header class="header">
 				<div class="header__contact">
-					<p class="header__contact-address">Новосибирск, ул. Дунаевского, 25/1</p>
-					<p class="header__contact-timeWork">Ежедневно с 9:00 до 20:00</p>
+					<img class="header__contact-icon" src="./images/marker-pin-01.svg" />
+					<p class="header__contact-text">Новосибирск, ул. Дунаевского, 25/1</p>
+					<img class="header__contact-icon" src="./images/clock.svg" />
+					<p class="header__contact-text">Ежедневно с 9:00 до 20:00</p>
 				</div>
-
 				<div class="header__main">
 					<a><img class="header__main-logo" src="./images/Logo.svg" alt="Лого header" /></a>
 					<menu class="header__links">
@@ -26,8 +27,8 @@
 						<a class="header__link">Контакты</a>
 					</menu>
 					<form>
-						<input class="" placeholder="Поиск по марке" />
-						<button>Связаться</button>
+						<input class="header__search" placeholder="Поиск по марке" />
+						<button class="header__btnContact">Связаться</button>
 					</form>
 				</div>
 			</header>
@@ -35,52 +36,52 @@
 				<section class="way">Главная > Каталог > Haval > Jolion</section>
 				<section class="specifications">
 					<div class="specifications__header">
-						<h1 class="specifications__header-title">Haval Jolion</h1>
-						<h2 class="specifications__header-location">В Новосибирске</h2>
-						<p class="specifications__header-availability">4 автомобиля в наличии</p>
+						<h1 class="header__title">Haval Jolion</h1>
+						<h2 class="header__location">В Новосибирске</h2>
+						<p class="header__availability">4 автомобиля в наличии</p>
 					</div>
 					<div class="specifications__main">
-						<div class="specifications__main-image">
-							<span class="discount">-30%</span>
-							<img src="./images/black.jpg" alt="car color" />
-							<div class="color">
-								<p>Цвет</p>
-								<p>Благородный агат</p>
+						<div class="main__visual">
+							<span class="visual__discount">-30%</span>
+							<img class="visual__img" src="./images/black.jpg" alt="car color" />
+							<div class="visual__color">
+								<p class="visual__text">Цвет</p>
+								<p class="visual__editText">Благородный агат</p>
 							</div>
 						</div>
-						<div class="specifications__main-buttonColors">
-							<button class="specifications__main-buttonColor">1</button>
-							<button class="specifications__main-buttonColor">2</button>
-							<button class="specifications__main-buttonColor">3</button>
-							<button class="specifications__main-buttonColor">4</button>
-							<button class="specifications__main-buttonColor">5</button>
+						<div class="main__buttonColors">
+							<button class="main__buttonColor">1</button>
+							<button class="main__buttonColor">2</button>
+							<button class="main__buttonColor">3</button>
+							<button class="main__buttonColor">4</button>
+							<button class="main__buttonColorr">5</button>
 						</div>
-						<div class="specifications__main-info">
-							<div class="parameters">
+						<div class="main__info">
+							<div class="info__parameters">
 								<div class="parameter">
-									<img src="./images/lightning-01.svg" />
+									<img class="parameter__icon" src="./images/lightning-01.svg" />
 									<p class="parameter__title">Мощность</p>
 									<p class="parameter__text">249 Л.С.</p>
 								</div>
 								<div class="parameter">
-									<img src="./images/speedometer-03.svg" />
+									<img class="parameter__icon" src="./images/speedometer-03.svg" />
 									<p class="parameter__title">Объем двигателя</p>
 									<p class="parameter__text">2,0 Л</p>
 								</div>
 								<div class="parameter">
-									<img src="./images/droplets-02.svg" />
+									<img class="parameter__icon" src="./images/droplets-02.svg" />
 									<p class="parameter__title">Расход</p>
 									<p class="parameter__text">2,0 Л</p>
 								</div>
 								<div class="parameter">
-									<img src="./images/Drive unit.svg" />
+									<img class="parameter__icon" src="./images/Drive unit.svg" />
 									<p class="parameter__title">Привод</p>
 									<p class="parameter__text">Полный</p>
 								</div>
 							</div>
 							<div class="benefit">
-								<ul>
-									<li class="benefit__point">
+								<ul class="benefit__offers">
+									<li class="benefit__offer">
 										<div class="checkbox">
 											<input type="checkbox" />
 											<span class="slider round"></span>
@@ -88,7 +89,7 @@
 										<p class="benefit__title">Скидка по Traid-in</p>
 										<p id="traidIn" class="benefit__sum">- 170 000 ₽</p>
 									</li>
-									<li class="benefit__point">
+									<li class="benefit__offer">
 										<div class="checkbox">
 											<input type="checkbox" />
 											<span class="slider round"></span>
@@ -96,7 +97,7 @@
 										<p class="benefit__title">Покупка в кредит</p>
 										<p id="bonus" class="benefit__sum">- 250 000 ₽</p>
 									</li>
-									<li class="benefit__point">
+									<li class="benefit__offer">
 										<div class="checkbox">
 											<input type="checkbox" />
 											<span class="slider round"></span>
@@ -104,7 +105,7 @@
 										<p class="benefit__title">Скидка по программе утилизации</p>
 										<p id="util" class="benefit__sum">- 80 000 ₽</p>
 									</li>
-									<li class="benefit__point">
+									<li class="benefit__offer">
 										<p class="benefit__title">Ваша выгода</p>
 										<p id="AllBenefit" class="benefit__sum">330 000 ₽</p>
 									</li>
@@ -114,12 +115,12 @@
 								<div class="final__price">
 									от
 									<p id="finalPrice">7 070 000 ₽</p>
-									<p class="final__price-credit">В кредит от 89 000 ₽/мес</p>
+									<p class="price__credit">В кредит от 89 000 ₽/мес</p>
 								</div>
 								<p class="benefit__sum">Цена без учета скидки: от 7 400 000 ₽</p>
 								<div class="final__buttons">
-									<button class="final__button final__button_booking">Забронировать</button>
-									<button class="final__button final__button_buy">Купить в кредит</button>
+									<button class="final__button final__button--booking">Забронировать</button>
+									<button class="final__button final__button--buy">Купить в кредит</button>
 								</div>
 							</div>
 						</div>
@@ -129,12 +130,12 @@
 					<h2 class="calc__title">Рассчитайте условия по кредиту на Haval Jolion</h2>
 					<div class="calc__main">
 						<div class="calc__credit">
-							<h2 class="calc__credit-title">Сумма кредита</h2>
-							<p id="finalPriceCalc" class="calc__credit-sumCred">7 070 000 ₽</p>
+							<h2 class="credit__title">Сумма кредита</h2>
+							<p id="finalPriceCalc" class="credit__sumCred">7 070 000 ₽</p>
 							<div class="inputRange">
 								<p class="inputRange__title">Первоначальный взнос</p>
 								<p id="firstInstallmentText" class="inputRange__value"></p>
-								<input id="firstInstallmentRange" type="range" oninput="updateTextFirstInst()" min="0" max="90" step="0.1" value="56,57708628005658" />
+								<input class="inputRange__input styled-slider slider-progress" id="firstInstallmentRange" type="range" oninput="updateTextFirstInst()" min="0" max="90" step="0.1" value="56,57708628005658" />
 								<div class="inputRange__range">
 									<p>0%</p>
 									<p>90%</p>
@@ -143,7 +144,7 @@
 							<div class="inputRange">
 								<p class="inputRange__title">Срок кредита</p>
 								<p id="termText" class="inputRange__value">6 мес.</p>
-								<input id="termRange" type="range" oninput="updateTextTerm()" min="6" max="96" step="6" value="6" />
+								<input class="inputRange__input styled-slider slider-progress" id="termRange" type="range" oninput="updateTextTerm()" min="6" max="96" step="6" value="6" />
 								<div class="inputRange__range">
 									<p>6 мес.</p>
 									<p>8 лет</p>
@@ -151,19 +152,19 @@
 							</div>
 						</div>
 						<div class="calc__offer">
-							<h2 class="calc__offer-title">Наше предложение</h2>
-							<div class="payment">
-								<h3 class="payment_title">Ежемесячный платеж</h3>
+							<h2 class="offer__title">Наше предложение</h2>
+							<div class="offer__payment">
+								<h3 class="payment__title">Ежемесячный платеж</h3>
 								<div class="payment__sum">
-									<button onclick="decrement()" class="payment__button">-</button>
+									<button onclick="decrement()" class="payment__button payment__button--minus">-</button>
 									<p class="payment__calc">30 000 Р</p>
-									<button onclick="increment()" class="payment__button">+</button>
+									<button onclick="increment()" class="payment__button payment__button--plus">+</button>
 								</div>
 								<div class="payment__disclaimer">
 									<img class="payment__disclaimer-img" src="./images/Icon.svg" alt="!" />
 									<p class="payment__disclaimer-text">Расчет носит инфомационный характер, не является публичной офертой</p>
 								</div>
-								<button class="payment__button">Купить в кредит</button>
+								<button class="payment__buttonBuy">Купить в кредит</button>
 							</div>
 						</div>
 					</div>
@@ -171,11 +172,11 @@
 				<section class="comparison">
 					<h2 class="comparison__title">Сравнение комплектаций Haval Jolion <span class="comparison___quantity">(12)</span></h2>
 					<div class="comparison__buttons">
-						<button class="button" id="prevBtn">←</button>
-						<button class="button" id="nextBtn">→</button>
+						<button class="comparison__button" id="prevBtn">←</button>
+						<button class="comparison__button" id="nextBtn">→</button>
 					</div>
 					<div class="comparison__container" style="display: flex"></div>
-					<div style='position: relative;'>
+					<div class="comparison__options">
 						<h3 class="options__title">Безопасность</h3>
 						<h4 class="options__subtitle">Крепления для детского кресла ISOFIX</h4>
 						<h4 class="options__subtitle">Крепления для детского кресла ISOFIX</h4>
@@ -195,14 +196,14 @@
 						<button class="card__btnClose">X</button>
 						<button class="card__btnSub">Отправить заявку</button>
 					</div>
-					<div class="options" style="display: flex; flex-direction: column; width: 50px">
-						<img class="option option1" src="" alt="" />
-						<img class="option option2" src="" alt="" />
-						<img class="option option3" src="" alt="" />
-						<img class="option option4" src="" alt="" />
-						<img class="option option5" src="" alt="" />
-						<img class="option option6" src="" alt="" />
-						<img class="option option7" src="" alt="" />
+					<div class="card__options" style="display: flex; flex-direction: column; width: 50px">
+						<img class="card__option option1" src="" alt="" />
+						<img class="card__option option2" src="" alt="" />
+						<img class="card__option option3" src="" alt="" />
+						<img class="card__option option4" src="" alt="" />
+						<img class="card__option option5" src="" alt="" />
+						<img class="card__option option6" src="" alt="" />
+						<img class="card__option option7" src="" alt="" />
 					</div>
 				</div>
 			</template>
