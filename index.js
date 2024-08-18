@@ -2,41 +2,87 @@ import { cars } from './cars.js'
 
 
 
-function createCards(item) {
-  const cardTemplate = document.getElementById('cardTemplate').content.querySelector('.card').cloneNode(true)
-  const cardBtnClose = cardTemplate.querySelector('.card__btnClose')
-  const cardBtnSub = cardTemplate.querySelector('.card__btnSub')
-  cardTemplate.querySelector('.card__title').textContent = item.name
-  cardTemplate.querySelector('.card__price').textContent = item.price
-  cardTemplate.querySelector('.option1').src = item.option1 ? './images/plus.svg' : './images/minus.svg'
-  cardTemplate.querySelector('.option2').src = item.option2 ? './images/plus.svg' : './images/minus.svg'
-  cardTemplate.querySelector('.option3').src = item.option3 ? './images/plus.svg' : './images/minus.svg'
-  cardTemplate.querySelector('.option4').src = item.option4 ? './images/plus.svg' : './images/minus.svg'
-  cardTemplate.querySelector('.option5').src = item.option5 ? './images/plus.svg' : './images/minus.svg'
-  cardTemplate.querySelector('.option6').src = item.option6 ? './images/plus.svg' : './images/minus.svg'
-  cardTemplate.querySelector('.option7').src = item.option7 ? './images/plus.svg' : './images/minus.svg'
-  return cardTemplate
+function createCar(item) {
+  const carTemplate = document.getElementById('carTemplate').content.querySelector('.card').cloneNode(true)
+  const cardBtnClose = carTemplate.querySelector('.card__btnClose')
+  const cardBtnSub = carTemplate.querySelector('.card__btnSub')
+  carTemplate.querySelector('.card__title').textContent = item.name
+  carTemplate.querySelector('.card__price').textContent = "от " + item.price.replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₽'
+
+  return carTemplate
 }
 
 function render(items) {
   items.forEach((item) => {
-    document.querySelector('.comparison__container').append(createCards(item))
+    document.querySelector('.comparison__cars').append(createCar(item))
   })
+  document.querySelector(".comparison___quantity").textContent = "(" + items.length + ")"
 }
 render(cars)
 
-const cards = document.querySelectorAll('.card') // Получаем все карточки
-let currentStartIndex = 0 // Начальный индекс текущей группы карточек
-const visibleCardsCount = 4 // Количество видимых карточек
+const option1List = document.querySelector('.option1');
+const option2List = document.querySelector('.option2');
+const option3List = document.querySelector('.option3');
+const option4List = document.querySelector('.option4');
+const option5List = document.querySelector('.option5');
+const option6List = document.querySelector('.option6');
+const option7List = document.querySelector('.option7');
 
+function createOption(item, optionKey, listElement, optionIndex) {
+  let li = document.createElement('li');
+  li.className = `option optionItem${optionIndex}`;
+
+  let img = document.createElement('img');
+  img.className = "option_img";
+  img.src = item[optionKey] ? './images/plus.svg' : './images/minus.svg';
+
+  li.appendChild(img);
+  listElement.appendChild(li);
+}
+
+function populateOptions() {
+  cars.forEach(item => {
+    createOption(item, 'option1', option1List, 1);
+    createOption(item, 'option2', option2List, 2);
+    createOption(item, 'option3', option3List, 3);
+    createOption(item, 'option4', option4List, 4);
+    createOption(item, 'option5', option5List, 5);
+    createOption(item, 'option6', option6List, 6);
+    createOption(item, 'option7', option7List, 7);
+  });
+}
+
+populateOptions();
+
+const cards = document.querySelectorAll('.card') // Получаем все карточки
+const options = document.querySelectorAll('.option')
+const optionItem1 = document.querySelectorAll('.optionItem1')
+const optionItem2 = document.querySelectorAll('.optionItem2')
+const optionItem3 = document.querySelectorAll('.optionItem3')
+const optionItem4 = document.querySelectorAll('.optionItem4')
+const optionItem5 = document.querySelectorAll('.optionItem5')
+const optionItem6 = document.querySelectorAll('.optionItem6')
+const optionItem7 = document.querySelectorAll('.optionItem7')
+
+let currentStartIndex = 0 // Начальный индекс текущей группы карточек
+const visibleCardsCount = window.innerWidth > 768 ? 4 : 12 // Количество видимых карточек
+console.log(window.innerWidth)
 function updateCardsDisplay() {
   // Скрываем все карточки
   cards.forEach((card) => card.classList.remove('visible'))
+  options.forEach((option) => option.classList.remove('visible'))
 
   // Показываем только нужные карточки
   for (let i = currentStartIndex; i < currentStartIndex + visibleCardsCount; i++) {
     if (cards[i]) {
       cards[i].classList.add('visible')
+      optionItem1[i].classList.add('visible')
+      optionItem2[i].classList.add('visible')
+      optionItem3[i].classList.add('visible')
+      optionItem4[i].classList.add('visible')
+      optionItem5[i].classList.add('visible')
+      optionItem6[i].classList.add('visible')
+      optionItem7[i].classList.add('visible')
     }
   }
 }

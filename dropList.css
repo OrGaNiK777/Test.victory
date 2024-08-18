@@ -1,0 +1,162 @@
+.dropList {
+	background-color: white;
+	.dropList__button {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 40px;
+		width: 1332px;
+		height: 48px;
+		font-size: 18px;
+		font-weight: 700;
+		line-height: 28px;
+		text-align: left;
+		border: none;
+		border-bottom: 1px solid #646970;
+		background-color: white;
+		cursor: pointer;
+		padding: 0 6px 10px 7px;
+	}
+	.dropList__button:hover {
+		background-color: rgb(233, 233, 233);
+	}
+	.dropList__options {
+		display: none;
+		padding-bottom: 80px;
+	}
+
+	.options__list {
+		/* position: absolute; */
+	}
+	.options__subtitle {
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+		text-align: left;
+		color: #646970;
+		padding: 0px 0 0 6px;
+		margin-top: 22px;
+		margin-bottom: 6px;
+	}
+
+	.options__component {
+		display: flex;
+	}
+
+	.options__container {
+		display: flex;
+	}
+
+	.option {
+		display: none;
+		justify-content: center;
+		align-items: center;
+		width: 324px;
+		margin: 0 6px 0 6px;
+		height: 44px;
+		border-radius: 16px;
+		background-color: #f3f6fb;
+	}
+	.option__img {
+		width: 24px;
+		height: 24px;
+	}
+
+	.visible {
+		display: flex;
+	}
+}
+@media (max-width: 360px) {
+	.dropList {
+		.dropList__button {
+			margin-left: 16px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-top: 0px;
+			width: 328px;
+			height: 48px;
+			font-size: 17px;
+			font-weight: 700;
+			line-height: 28px;
+			text-align: left;
+			border: none;
+			border-bottom: 1px solid #646970;
+			background-color: white;
+			cursor: pointer;
+			padding: 39px 6px 28px 0;
+		}
+		.dropList__button:hover {
+			background-color: rgb(233, 233, 233);
+		}
+		.dropList__options {
+			display: none;
+			padding-bottom: 80px;
+		}
+
+		.options__list {
+			margin-left: 16px;
+		}
+		.options__subtitle {
+			margin-left: 0px;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 24px;
+			text-align: left;
+			color: #646970;
+			padding: 0px 0 0 0px;
+		}
+
+		.options__component {
+			display: flex;
+		}
+		.comparison__options {
+		}
+		.options {
+		}
+		.options__container {
+			display: flex;
+		}
+
+		.option {
+			display: none;
+			justify-content: center;
+			align-items: center;
+			width: 300px;
+			margin: 0 0px 0 12px;
+			height: 44px;
+			border-radius: 16px;
+			background-color: #f3f6fb;
+		}
+		.option:first-child {
+			margin: 0 0px 0 0px;
+		}
+
+		.option__img {
+			width: 24px;
+			height: 24px;
+		}
+
+		.visible {
+			display: flex;
+		}
+		.dropList__options {
+			display: flex;
+			justify-content: start;
+			align-items: start;
+			overflow: hidden; /* Скрываем переполнение */
+			width: 100%; /* Занимаем всю ширину контейнера */
+			position: relative;
+		}
+
+		.options__list {
+			/* Горизонтальное расположение карточек */
+			transition: transform 0.3s ease; /* Плавный переход при перемещении */
+		}
+
+		.scrollable-text {
+			white-space: nowrap; /* предотвращаем перенос текста */
+			transition: transform 0.3s ease; /* плавный переход */
+		}
+	}
+}

@@ -1,141 +1,64 @@
 <!DOCTYPE html>
 <html lang="ru">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Пролистывание карточек</title>
-		<style>
-			body {
-				font-family: Arial, sans-serif;
-				padding: 20px;
-			}
-			.card-container {
-				display: flex;
-				overflow: hidden;
-				width: 80%;
-				transition: transform 0.5s ease;
-				margin: 20px 0;
-			}
-			.card {
-				border: 1px solid #ccc;
-				border-radius: 8px;
-				padding: 20px;
-				margin-right: 10px;
-				min-width: 200px;
-				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-			.button {
-				margin: 10px;
-				cursor: pointer;
-				padding: 10px 15px;
-				background-color: #007bff;
-				color: white;
-				border: none;
-				border-radius: 5px;
-			}
-			#staticText {
-				margin: 20px 0;
-				font-size: 18px;
-				text-align: center;
-			}
-		</style>
-	</head>
-	<body>
-		<h1>Пролистывание карточек</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прокрутка текста</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px; /* максимальная ширина контейнера */
+            height: 80px; /* высота для контейнера */
+            overflow: hidden;
+            background-color: #fff; /* цвет фона */
+            border: 1px solid #ccc;
+            border-radius: 8px; /* закругленные углы */
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
 
-		<div class="card-container" id="topCardContainer">
-			<!-- Карточки -->
-			<div class="card">Карточка 1</div>
-			<div class="card">Карточка 2</div>
-			<div class="card">Карточка 3</div>
-			<div class="card">Карточка 4</div>
-			<div class="card">Карточка 5</div>
-			<div class="card">Карточка 6</div>
-			<div class="card">Карточка 7</div>
-			<div class="card">Карточка 8</div>
-			<div class="card">Карточка 9</div>
-			<div class="card">Карточка 10</div>
-			<div class="card">Карточка 11</div>
-			<div class="card">Карточка 12</div>
-		</div>
+        .scrollable-text {
+            white-space: nowrap; /* предотвращаем перенос текста */
+            transition: transform 0.3s ease; /* плавный переход */
+        }
+    </style>
+</head>
+<body>
 
-		<button class="button" id="prevBtn">← Предыдущие</button>
-		<button class="button" id="nextBtn">Следующие →</button>
+    <div class="container">
+        <div class="scrollable-text">Очень длинный текст, который будет двигаться вместе со свайпом вправо...</div>
+    </div>
 
-		<div id="staticText">Статический текст между карточками</div>
+    <script>
+        let container = document.querySelector('.container');
+        let scrollableText = document.querySelector('.scrollable-text');
 
-		<!-- Шаблон для нижних блоков -->
-		<template id="block-template">
-			<div class="card-container">
-				<div class="card">Блок карточка 1</div>
-				<div class="card">Блок карточка 2</div>
-				<div class="card">Блок карточка 3</div>
-				<div class="card">Блок карточка 4</div>
-				<div class="card">Блок карточка 5</div>
-				<div class="card">Блок карточка 6</div>
-				<div class="card">Блок карточка 7</div>
-				<div class="card">Блок карточка 8</div>
-				<div class="card">Блок карточка 9</div>
-				<div class="card">Блок карточка 10</div>
-				<div class="card">Блок карточка 11</div>
-				<div class="card">Блок карточка 12</div>
-			</div>
-		</template>
+        let startX;
 
-		<div id="bottomBlocks"></div>
-		<!-- Контейнер для нижних блоков -->
+        container.addEventListener('touchstart', function(e) {
+            startX = e.touches[0].clientX; // запоминаем начальную позицию
+        });
 
-		<script>
-			const topCards = document.querySelectorAll('#topCardContainer .card') // Получаем все верхние карточки
-			const topContainer = document.getElementById('topCardContainer') // Контейнер верхних карточек
+        container.addEventListener('touchmove', function(e) {
+            let moveX = e.touches[0].clientX - startX; // смещение
+            
+            // Двигаем текст в зависимости от смещения свайпа
+            scrollableText.style.transform = `translateX(${moveX}px)`;
+        });
 
-			const visibleCardsCount = 4 // Количество видимых карточек
-			let currentStartIndex = 0 // Текущий начальный индекс
-
-			// Генерируем 7 нижних блоков на основе шаблона
-			const bottomBlocksContainer = document.getElementById('bottomBlocks')
-			const template = document.getElementById('block-template').content
-
-			for (let i = 0; i < 7; i++) {
-				const block = template.cloneNode(true) // Клонируем шаблон
-				const blockDiv = document.createElement('div')
-				blockDiv.appendChild(block)
-				bottomBlocksContainer.appendChild(blockDiv) // Добавляем каждый блок в контейнер
-			}
-
-			function updateCardsDisplay() {
-				const offset = -currentStartIndex * (100 / visibleCardsCount) // Вычисляем смещение в процентах
-				topContainer.style.transform = `translateX(${offset}%)` // Обновляем верхний контейнер
-
-				const bottomContainerBlocks = bottomBlocksContainer.querySelectorAll('.card-container') // Получаем все нижние контейнеры
-
-				// Обновляем каждый нижний контейнер
-				bottomContainerBlocks.forEach((container) => {
-					container.style.transform = `translateX(${offset}%)`
-				})
-			}
-
-			document.getElementById('prevBtn').addEventListener('click', () => {
-				// Переход к предыдущим карточкам, проверка, чтобы не выйти за границы
-				if (currentStartIndex > 0) {
-					currentStartIndex--
-					updateCardsDisplay()
-				}
-			})
-
-			document.getElementById('nextBtn').addEventListener('click', () => {
-				// Переход к следующим карточкам, проверка, чтобы не выйти за границы
-				if (currentStartIndex + visibleCardsCount < topCards.length) {
-					currentStartIndex++
-					updateCardsDisplay()
-				}
-			})
-
-			// Начальное отображение карточек
-			updateCardsDisplay()
-		</script>
-	</body>
+        container.addEventListener('touchend', function() {
+            // Можно добавить логику для завершения свайпа (например, возврат или удержание положения)
+            scrollableText.style.transform = `translateX(0)`; // вернем на место (или другую логику)
+        });
+    </script>
+    
+</body>
 </html>
