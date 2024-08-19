@@ -31,6 +31,7 @@
 	opacity: 0.5;
 	justify-content: space-between;
 	align-items: center;
+	margin-right: 3.33px;
 }
 
 .header__contact-icon {
@@ -119,6 +120,13 @@
 
 .header__btnContact:hover {
 	background: #1641bc;
+}
+
+.header__searchIcon {
+	position: relative;
+	top: 8px;
+	left: 40px;
+	z-index: 0;
 }
 
 @media (max-width: 768px) {

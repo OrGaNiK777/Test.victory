@@ -1,53 +1,58 @@
-
-const dropList = document.querySelector(".swapComponent")
-const carContainer = document.querySelector('.comparison__container')
-const optionsContainer = document.querySelector('.options__list')
+const dropList = document.querySelector(".swapComponent");
+const carContainer = document.querySelector('.comparison__container');
+const optionsContainer = document.querySelector('.options__list');
 let scrollableText = document.querySelectorAll('.scrollable-text');
-let isDragging = false
-let startX
-let currentTranslate = 0
-let prevTranslate = 0
-const cardWidth = 312 // Ширина карточки
-
+let isDragging = false;
+let startX;
+let currentTranslate = 0;
+let prevTranslate = 0;
+const cardWidth = 312;
+const tapThreshold = 10;
+let moved = false;
 
 dropList.addEventListener('touchstart', (event) => {
-  isDragging = true
-  startX = event.touches[0].clientX // Запоминаем начальную позицию
-  optionsContainer.style.transition = 'none' // Отключаем переход при начале перетаскивания
-  carContainer.style.transition = 'none' // Отключаем переход при начале перетаскивания
-})
+  isDragging = true;
+  startX = event.touches[0].clientX;
+  optionsContainer.style.transition = 'none';
+  carContainer.style.transition = 'none';
+});
 
 dropList.addEventListener('touchmove', (event) => {
-  if (!isDragging) return
-  const currentX = event.touches[0].clientX // Текущая позиция
-  const diffX = currentX - startX // Разница между начальной и текущей позицией
-  currentTranslate = prevTranslate + diffX // Обновляем текущее смещение
-  carContainer.style.transform = `translateX(${currentTranslate}px)`
-  optionsContainer.style.transform = `translateX(${currentTranslate}px)`
-})
+  if (!isDragging) return;
+
+  const currentX = event.touches[0].clientX;
+  const diffX = currentX - startX;
+
+  if (Math.abs(diffX) > tapThreshold) {
+    moved = true;
+    currentTranslate = prevTranslate + diffX;
+    carContainer.style.transform = `translateX(${currentTranslate}px)`;
+    optionsContainer.style.transform = `translateX(${currentTranslate}px)`;
+  }
+});
 
 dropList.addEventListener('touchend', () => {
-  isDragging = false
-  carContainer.style.transition = 'transform 0.3s ease' // Включаем переход обратно
-  optionsContainer.style.transition = 'transform 0.3s ease' // Включаем переход обратно
+  isDragging = false;
+  carContainer.style.transition = 'transform 0.3s ease';
+  optionsContainer.style.transition = 'transform 0.3s ease';
 
-  const movedBy = currentTranslate - prevTranslate
-
-  // Определяем направление свайпа и обновляем prevTranslate
-  if (movedBy < -50) {
-    prevTranslate -= cardWidth // Сдвиг влево
-  } else if (movedBy > 50) {
-    prevTranslate += cardWidth // Сдвиг вправо
+  if (!moved) {
+    return;
   }
 
-  // Ограничиваем перемещение в пределах доступных карточек
-  prevTranslate = Math.max(Math.min(prevTranslate, 0), -(optionsContainer.children.length - 3) * cardWidth)
-  console.log(optionsContainer.children.length)
-  optionsContainer.style.transform = `translateX(${prevTranslate}px)`
-  carContainer.style.transform = `translateX(${prevTranslate}px)`
-  scrollableText.forEach((s) => { s.style.transform = `translateX(${-(prevTranslate)}px)` })
+  moved = false;
+  const movedBy = currentTranslate - prevTranslate;
 
-})
+  if (movedBy < -50) {
+    prevTranslate -= cardWidth;
+  } else if (movedBy > 50) {
+    prevTranslate += cardWidth;
+  }
 
-
-
+  prevTranslate = Math.max(Math.min(prevTranslate, 0), -(optionsContainer.children.length - 3) * cardWidth);
+  optionsContainer.style.transform = `translateX(${prevTranslate}px)`;
+  carContainer.style.transform = `translateX(${prevTranslate}px)`;
+  scrollableText.forEach((s) => {
+    s.style.transform = `translateX(${-prevTranslate}px)`;
+  });
+});

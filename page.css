@@ -32,7 +32,10 @@ a {
 	.forMobil {
 		display: block;
 	}
-	.swapComponent{
+	body {
+		padding-bottom: 60px;
+	}
+	.swapComponent {
 		display: flex;
 		justify-content: start;
 		align-items: start;

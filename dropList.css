@@ -4,7 +4,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		margin-top: 40px;
+		margin: 40px 0px 0 6px;
 		width: 1332px;
 		height: 48px;
 		font-size: 18px;
@@ -15,19 +15,14 @@
 		border-bottom: 1px solid #646970;
 		background-color: white;
 		cursor: pointer;
-		padding: 0 6px 10px 7px;
+		padding: 0 7px 10px 0px;
 	}
-	.dropList__button:hover {
-		background-color: rgb(233, 233, 233);
-	}
+
 	.dropList__options {
 		display: none;
 		padding-bottom: 80px;
 	}
 
-	.options__list {
-		/* position: absolute; */
-	}
 	.options__subtitle {
 		font-size: 16px;
 		font-weight: 400;
@@ -69,12 +64,9 @@
 @media (max-width: 768px) {
 	.dropList {
 		.dropList__button {
-			margin-left: 16px;
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			margin-top: 0px;
-			width: 328px;
 			height: 48px;
 			font-size: 17px;
 			font-weight: 700;
@@ -85,13 +77,17 @@
 			background-color: white;
 			cursor: pointer;
 			padding: 39px 6px 28px 0;
+			width: calc(100vw - 32px);
+			margin: 0 32px 0 16px;
 		}
-		.dropList__button:hover {
-			background-color: rgb(233, 233, 233);
-		}
+
 		.dropList__options {
 			display: none;
-			padding-bottom: 80px;
+			justify-content: start;
+			align-items: start;
+			overflow: hidden;
+			width: 100%;
+			position: relative;
 		}
 
 		.options__list {
@@ -110,10 +106,7 @@
 		.options__component {
 			display: flex;
 		}
-		.comparison__options {
-		}
-		.options {
-		}
+
 		.options__container {
 			display: flex;
 		}
@@ -140,23 +133,14 @@
 		.visible {
 			display: flex;
 		}
-		.dropList__options {
-			display: flex;
-			justify-content: start;
-			align-items: start;
-			overflow: hidden; /* Скрываем переполнение */
-			width: 100%; /* Занимаем всю ширину контейнера */
-			position: relative;
-		}
 
 		.options__list {
-			/* Горизонтальное расположение карточек */
-			transition: transform 0.3s ease; /* Плавный переход при перемещении */
+			transition: transform 0.3s ease;
 		}
 
 		.scrollable-text {
-			white-space: nowrap; /* предотвращаем перенос текста */
-			transition: transform 0.3s ease; /* плавный переход */
+			white-space: nowrap;
+			transition: transform 0.3s ease;
 		}
 	}
 }
