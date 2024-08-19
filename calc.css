@@ -2,6 +2,7 @@
 	border-radius: 40px;
 	background-color: #e4ecf8;
 	padding-bottom: 80px;
+
 	.calc__title {
 		margin-top: 80px;
 		font-size: 33px;
@@ -10,6 +11,7 @@
 		margin-bottom: 40px;
 		letter-spacing: 0.3px;
 	}
+
 	.calc__main {
 		display: flex;
 		align-items: center;
@@ -19,6 +21,7 @@
 		border-radius: 16px;
 		background-color: #f3f6fb;
 	}
+
 	.calc__credit {
 		height: 270px;
 		display: flex;
@@ -39,20 +42,23 @@
 		line-height: 24px;
 		color: #646970;
 	}
+
 	.credit__sumCred {
 		font-size: 20px;
 		font-weight: 700;
 		line-height: 28px;
 		color: #2e58db;
 	}
+
 	.calc__offer {
 		margin-left: 40px;
 		width: 494px;
 		height: 276px;
-		padding: 20px 24px 20px 24px;
+		padding: 20px 24px;
 		border-radius: 16px;
 		background-color: #ffffff;
 	}
+
 	.offer__title {
 		font-size: 19px;
 		font-weight: 700;
@@ -60,29 +66,34 @@
 		text-align: center;
 		margin-bottom: 24px;
 	}
+
 	.offer__payment {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		margin-bottom: 24px;
 	}
+
 	.payment__title {
 		font-size: 16px;
 		font-weight: 400;
 		line-height: 24px;
 	}
+
 	.payment__sum {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
+
 	.payment__calc {
 		font-size: 24px;
 		font-weight: 700;
 		line-height: 32px;
 		color: #2e58db;
-		margin: 0 24px 0 24px;
+		margin: 0 24px;
 	}
+
 	.payment__button {
 		cursor: pointer;
 		display: flex;
@@ -93,25 +104,27 @@
 		border-radius: 50%;
 		border: 1px solid #9ca5b3;
 		background-color: white;
-	}
 
-	.payment__button:hover {
-		border: 1px solid #151515;
+		&:hover {
+			border: 1px solid #151515;
+		}
 	}
 
 	.payment__disclaimer {
 		display: flex;
 		width: 446px;
 		height: 56px;
-		padding: 8px 130px 8px 12px;
+		padding: 8px 13px 8px 12px;
 		border-radius: 12px;
 		background-color: #f3f6fb;
 	}
+
 	.payment__disclaimer-img {
 		margin-bottom: 18px;
 		width: 20px;
 		height: 20px;
 	}
+
 	.payment__disclaimer-text {
 		margin-left: 12px;
 		font-size: 14px;
@@ -119,6 +132,7 @@
 		line-height: 20px;
 		color: #646970;
 	}
+
 	.payment__buttonBuy {
 		width: 152px;
 		height: 48px;
@@ -131,17 +145,18 @@
 		margin: 23px 0 0 294px;
 		border: none;
 		cursor: pointer;
-	}
-	.payment__buttonBuy:hover {
-		background-color: #1641bc;
+
+		&:hover {
+			background-color: #1641bc;
+		}
 	}
 }
 
 @media (max-width: 768px) {
 	.calc {
 		border-radius: 20px;
-		background-color: #e4ecf8;
 		padding-bottom: 210px;
+
 		.calc__title {
 			margin-top: 40px;
 			font-size: 26px;
@@ -150,63 +165,44 @@
 			text-align: left;
 			width: 328px;
 		}
+
 		.calc__main {
 			display: block;
-			align-items: center;
-			justify-content: center;
 			width: 328px;
-			border-radius: 16px;
 			background-color: transparent;
-			margin-top: 0px;
+			margin-top: 0;
 		}
+
 		.calc__credit {
 			height: 257px;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
 		}
 
 		.credit__comp {
 			height: 32px;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-		}
-
-		.credit__title {
-			font-size: 15px;
-			font-weight: 700;
-			line-height: 24px;
-			color: #646970;
 		}
 
 		.calc__offer {
-			margin-left: 0px;
+			margin-left: 0;
 			margin-top: 18px;
 			width: 328px;
 			height: 180px;
-			padding: 20px 12px 20px 12px;
+			padding: 20px 12px;
 		}
+
 		.offer__title {
 			display: none;
 		}
+
 		.offer__payment {
 			display: block;
-			justify-content: space-between;
-			align-items: center;
-			margin-bottom: 24px;
 		}
+
 		.payment__title {
 			text-align: center;
-			font-size: 16px;
-			font-weight: 400;
-			line-height: 24px;
 		}
+
 		.payment__sum {
 			margin-top: 12px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
 		}
 
 		.payment__calc {
@@ -214,62 +210,25 @@
 			margin-left: 26px;
 		}
 
-		.payment__button {
-			cursor: pointer;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			width: 24px;
-			height: 24px;
-			border-radius: 50%;
-			border: 1px solid #9ca5b3;
-			background-color: white;
-		}
-
-		.payment__button:hover {
-			border: 1px solid #151515;
-		}
-
 		.payment__disclaimer {
+			display: flex;
 			margin-left: -12px;
 			position: relative;
 			top: 88px;
-			display: flex;
 			width: 328px;
-			height: 56px;
-			padding: 8px 10px 8px 12px;
-			border-radius: 12px;
-			background-color: #f3f6fb;
+			padding: 8px 5px 8px 12px;
 		}
+
 		.payment__disclaimer-img {
-			margin-bottom: 18px;
 			width: 24px;
 			height: 24px;
 		}
-		.payment__disclaimer-text {
-			margin-left: 10px;
-			font-size: 14px;
-			font-weight: 400;
-			line-height: 20px;
-			color: #646970;
-		}
+
 		.payment__buttonBuy {
 			position: relative;
 			bottom: 56px;
 			width: 304px;
-			height: 48px;
-			border-radius: 16px;
-			background-color: #2e58db;
-			font-size: 13px;
-			font-weight: 700;
-			line-height: 20px;
-			color: #ffffff;
-			margin: 0px 0 0 0px;
-			border: none;
-			cursor: pointer;
-		}
-		.payment__buttonBuy:hover {
-			background-color: #1641bc;
+			margin: 1px 0 0 0px;
 		}
 	}
 }

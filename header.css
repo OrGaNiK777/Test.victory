@@ -23,15 +23,13 @@
 }
 
 .header__contact-text {
-	display: flex;
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 20px;
 	color: #dce1e9;
 	opacity: 0.5;
-	justify-content: space-between;
-	align-items: center;
 	margin-right: 3.33px;
+	justify-content: space-between;
 }
 
 .header__contact-icon {
@@ -61,7 +59,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 20px 20px 20px 20px;
+	padding: 20px;
 	margin-right: 4px;
 	height: 40px;
 	border-radius: 16px;
@@ -78,10 +76,7 @@
 }
 
 .header__link:last-child {
-	margin-right: 0px;
-}
-
-.header__link--active {
+	margin-right: 0; /* Устанавливаем 0 вместо 0px */
 }
 
 .header__link:hover {
@@ -98,12 +93,6 @@
 	border: 1px solid #9ca5b3;
 	color: #9ca5b3;
 	margin-right: 4px;
-}
-
-.header__search:hover::placeholder {
-	color: #9ca5b3;
-}
-.header__search:focus {
 }
 
 .header__btnContact {
@@ -130,24 +119,12 @@
 }
 
 @media (max-width: 768px) {
-	.header {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		background-color: #ffffff;
-	}
-
 	.header__contact {
 		display: none;
 	}
 
 	.header__main {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
 		width: 360px;
-		height: 64px;
 		padding-top: 5px;
 	}
 
@@ -157,7 +134,6 @@
 	.main__telIcon {
 		padding-right: 18px;
 	}
-
 	.header__main-logo {
 		width: 161px;
 		height: 41px;

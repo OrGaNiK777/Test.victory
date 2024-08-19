@@ -1,13 +1,11 @@
 .dropList {
 	background-color: white;
+
 	.dropList__button {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		margin: 40px 0px 0 6px;
-		width: 1332px;
 		height: 48px;
-		font-size: 18px;
 		font-weight: 700;
 		line-height: 28px;
 		text-align: left;
@@ -15,7 +13,6 @@
 		border-bottom: 1px solid #646970;
 		background-color: white;
 		cursor: pointer;
-		padding: 0 7px 10px 0px;
 	}
 
 	.dropList__options {
@@ -29,7 +26,7 @@
 		line-height: 24px;
 		text-align: left;
 		color: #646970;
-		padding: 0px 0 0 6px;
+		padding: 0 0 0 6px;
 		margin-top: 22px;
 		margin-bottom: 6px;
 	}
@@ -46,12 +43,12 @@
 		display: none;
 		justify-content: center;
 		align-items: center;
-		width: 324px;
-		margin: 0 6px 0 6px;
+		margin: 0 6px;
 		height: 44px;
 		border-radius: 16px;
 		background-color: #f3f6fb;
 	}
+
 	.option__img {
 		width: 24px;
 		height: 24px;
@@ -60,87 +57,48 @@
 	.visible {
 		display: flex;
 	}
+
+	.scrollable-text {
+		white-space: nowrap;
+		transition: transform 0.3s ease;
+	}
 }
+
 @media (max-width: 768px) {
 	.dropList {
+		padding-bottom: 80px;
 		.dropList__button {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			height: 48px;
+			margin: 0 32px 0 16px;
 			font-size: 17px;
-			font-weight: 700;
-			line-height: 28px;
-			text-align: left;
-			border: none;
-			border-bottom: 1px solid #646970;
-			background-color: white;
-			cursor: pointer;
 			padding: 39px 6px 28px 0;
 			width: calc(100vw - 32px);
-			margin: 0 32px 0 16px;
 		}
 
 		.dropList__options {
-			display: none;
 			justify-content: start;
 			align-items: start;
 			overflow: hidden;
 			width: 100%;
 			position: relative;
+			padding-bottom: 0;
 		}
 
 		.options__list {
 			margin-left: 16px;
+			transition: transform 0.3s ease;
 		}
+
 		.options__subtitle {
-			margin-left: 0px;
-			font-size: 16px;
-			font-weight: 400;
-			line-height: 24px;
-			text-align: left;
-			color: #646970;
-			padding: 0px 0 0 0px;
-		}
-
-		.options__component {
-			display: flex;
-		}
-
-		.options__container {
-			display: flex;
+			margin-left: 0;
+			padding: 0;
 		}
 
 		.option {
-			display: none;
-			justify-content: center;
-			align-items: center;
 			width: 300px;
-			margin: 0 0px 0 12px;
-			height: 44px;
-			border-radius: 16px;
-			background-color: #f3f6fb;
+			margin: 0 0 0 12px;
 		}
 		.option:first-child {
-			margin: 0 0px 0 0px;
-		}
-
-		.option__img {
-			width: 24px;
-			height: 24px;
-		}
-
-		.visible {
-			display: flex;
-		}
-
-		.options__list {
-			transition: transform 0.3s ease;
-		}
-
-		.scrollable-text {
-			white-space: nowrap;
-			transition: transform 0.3s ease;
+			margin-left: 0;
 		}
 	}
 }

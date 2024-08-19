@@ -22,7 +22,7 @@ button,
 a {
 	border: none;
 	background-color: transparent;
-	transition: background-color 0.4s ease, transform 0.4s ease; /* Плавный переход */
+	transition: background-color 0.4s ease, transform 0.4s ease;
 }
 .forMobil {
 	display: none;
@@ -32,16 +32,14 @@ a {
 	.forMobil {
 		display: block;
 	}
-	body {
-		padding-bottom: 60px;
-	}
+
 	.swapComponent {
 		display: flex;
 		justify-content: start;
 		align-items: start;
-		overflow: hidden; /* Скрываем переполнение */
-		width: 100%; /* Занимаем всю ширину контейнера */
+		overflow: hidden;
+		width: 100%;
 		position: relative;
-		transition: transform 0.3s ease; /* Плавный переход при перемещении */
+		transition: transform 0.3s ease;
 	}
 }
