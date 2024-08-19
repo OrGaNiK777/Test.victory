@@ -134,7 +134,7 @@ input[type='range'].styled-slider.slider-progress::-ms-fill-lower {
 	border: none;
 	border-right-width: 0;
 }
-@media (max-width: 360px) {
+@media (max-width: 7680px) {
 	.inputRange {
 		.inputRange__title {
 			background-color: white;

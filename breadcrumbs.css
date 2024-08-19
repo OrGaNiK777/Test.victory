@@ -30,7 +30,7 @@
 	text-decoration: none;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 768px) {
 	.breadcrumb {
 		width: 360px;
 	}

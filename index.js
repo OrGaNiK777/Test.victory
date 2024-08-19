@@ -65,7 +65,7 @@ const optionItem6 = document.querySelectorAll('.optionItem6')
 const optionItem7 = document.querySelectorAll('.optionItem7')
 
 let currentStartIndex = 0 // Начальный индекс текущей группы карточек
-const visibleCardsCount = window.innerWidth > 768 ? 4 : 12 // Количество видимых карточек
+const visibleCardsCount = window.innerWidth > 900 ? 4 : 12 // Количество видимых карточек
 console.log(window.innerWidth)
 function updateCardsDisplay() {
   // Скрываем все карточки
