@@ -46,7 +46,7 @@
 	}
 
 	.card {
-		display: none; /* Скрываем карточки по умолчанию */
+		display: none;
 	}
 
 	.card__container {
@@ -63,7 +63,7 @@
 	}
 
 	.visible {
-		display: flex; /* Отображаем видимые карточки */
+		display: flex;
 	}
 
 	.card__title {

@@ -76,7 +76,7 @@
 }
 
 .header__link:last-child {
-	margin-right: 0; /* Устанавливаем 0 вместо 0px */
+	margin-right: 0;
 }
 
 .header__link:hover {

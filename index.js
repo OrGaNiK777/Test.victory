@@ -54,7 +54,7 @@ function populateOptions() {
 
 populateOptions();
 
-const cards = document.querySelectorAll('.card') // Получаем все карточки
+const cards = document.querySelectorAll('.card')
 const options = document.querySelectorAll('.option')
 const optionItem1 = document.querySelectorAll('.optionItem1')
 const optionItem2 = document.querySelectorAll('.optionItem2')
@@ -64,15 +64,13 @@ const optionItem5 = document.querySelectorAll('.optionItem5')
 const optionItem6 = document.querySelectorAll('.optionItem6')
 const optionItem7 = document.querySelectorAll('.optionItem7')
 
-let currentStartIndex = 0 // Начальный индекс текущей группы карточек
-const visibleCardsCount = window.innerWidth > 900 ? 4 : 12 // Количество видимых карточек
+let currentStartIndex = 0 
+const visibleCardsCount = window.innerWidth > 900 ? 4 : 12 
 console.log(window.innerWidth)
 function updateCardsDisplay() {
-  // Скрываем все карточки
   cards.forEach((card) => card.classList.remove('visible'))
   options.forEach((option) => option.classList.remove('visible'))
 
-  // Показываем только нужные карточки
   for (let i = currentStartIndex; i < currentStartIndex + visibleCardsCount; i++) {
     if (cards[i]) {
       cards[i].classList.add('visible')
@@ -88,7 +86,6 @@ function updateCardsDisplay() {
 }
 
 document.getElementById('prevBtn').addEventListener('click', () => {
-  // Уменьшаем индекс, чтобы перейти к предыдущим карточкам
   if (currentStartIndex > 0) {
     currentStartIndex -= visibleCardsCount
     updateCardsDisplay()
@@ -96,14 +93,11 @@ document.getElementById('prevBtn').addEventListener('click', () => {
 })
 
 document.getElementById('nextBtn').addEventListener('click', () => {
-  // Увеличиваем индекс, чтобы перейти к следующим карточкам
   if (currentStartIndex + visibleCardsCount < cards.length) {
     currentStartIndex += visibleCardsCount
     updateCardsDisplay()
   }
 })
-
-// Начальное отображение карточек
 updateCardsDisplay()
 
 for (let e of document.querySelectorAll('input[type="range"].slider-progress')) {
