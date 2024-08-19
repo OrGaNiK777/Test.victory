@@ -121,10 +121,6 @@ input[type='range'].styled-slider.slider-progress::-ms-fill-lower {
 
 @media (max-width: 768px) {
 	.inputRange {
-		.inputRange__title {
-			/* Вынесено, так как не изменяется в медиазапросе */
-		}
-
 		.inputRange__value {
 			width: 328px;
 		}
